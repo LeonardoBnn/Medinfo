@@ -1,0 +1,256 @@
+:root {
+    --medinfo-primary: #4D61F4;    /* bleu médical principal */
+    --medinfo-primary-soft: #EEF1FF;
+    --medinfo-secondary: #D7FF7B;  /* vert accent */
+    --medinfo-bg: #FFFFFF;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-danger: #E53E3E;
+
+    --medinfo-radius-lg: 18px;
+    --medinfo-radius-xl: 26px;
+    --medinfo-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --medinfo-transition-fast: 0.18s ease-out;
+}
+
+/* ===========================
+   MedInfo - Page Accueil
+   =========================== */
+
+.main-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--medinfo-bg);
+}
+
+.main-section h2 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2.2rem;
+    color: var(--medinfo-primary);
+    margin-bottom: 1rem;
+}
+
+.main-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--medinfo-text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+/* Bouton principal */
+.btn-primary {
+    background-color: var(--medinfo-primary);
+    color: var(--medinfo-bg);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--medinfo-radius-lg);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background var(--medinfo-transition-fast), transform var(--medinfo-transition-fast);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.btn-primary:hover {
+    background-color: #3b4ed1; /* nuance plus foncée */
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Sections Accueil
+   =========================== */
+
+.specialites, .how-it-works, .access {
+    background: linear-gradient(135deg, var(--medinfo-bg-alt), var(--medinfo-primary-soft));
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    border-radius: var(--medinfo-radius-xl);
+    box-shadow: var(--medinfo-shadow-soft);
+    max-width: 1200px;   /* élargir la largeur max */
+    width: 90%;          /* occuper plus d’espace sur la page */
+    text-align: center;
+    transition: transform var(--medinfo-transition-fast);
+}
+
+.specialites:hover, .how-it-works:hover, .access:hover {
+    transform: translateY(-4px);
+}
+
+/* Titres */
+.specialites h3, .how-it-works h3, .access h3 {
+    font-family: 'Barlow', sans-serif;
+    color: var(--medinfo-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+/* Liste des spécialités */
+.specialite-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+}
+
+.specialite-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--medinfo-text-main);
+    background-color: var(--medinfo-primary-soft);
+    padding: 0.8rem 1rem;
+    border-radius: var(--medinfo-radius-lg);
+    box-shadow: var(--medinfo-shadow-soft);
+    transition: background var(--medinfo-transition-fast), transform var(--medinfo-transition-fast);
+}
+
+.specialite-list li:hover {
+    background-color: var(--medinfo-secondary);
+    transform: scale(1.05);
+}
+
+/* Étapes */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--medinfo-text-main);
+    background-color: var(--medinfo-secondary);
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--medinfo-radius-lg);
+    box-shadow: var(--medinfo-shadow-soft);
+    transition: transform var(--medinfo-transition-fast);
+}
+
+.step:hover {
+    transform: translateY(-3px);
+    background-color: var(--medinfo-primary-soft);
+}
+
+/* ===========================
+   Dashboards Patient & Médecin
+   =========================== */
+
+.dashboard {
+    background-color: var(--medinfo-bg-alt);
+    padding: 2.5rem;
+    margin: 2rem auto;
+    border-radius: var(--medinfo-radius-lg);
+    box-shadow: var(--medinfo-shadow-soft);
+    max-width: 950px;
+    text-align: center;
+}
+
+.dashboard h3 {
+    font-family: 'Barlow', sans-serif;
+    color: var(--medinfo-primary);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+/* Grille des actions */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--medinfo-primary-soft);
+    padding: 1.5rem;
+    border-radius: var(--medinfo-radius-lg);
+    text-decoration: none;
+    color: var(--medinfo-text-main);
+    font-family: 'Montserrat', sans-serif;
+    transition: transform var(--medinfo-transition-fast), background var(--medinfo-transition-fast);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    background: var(--medinfo-secondary);
+}
+
+.action-card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.action-card .text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ===========================
+   Boutons secondaires
+   =========================== */
+
+.btn-secondary {
+    background-color: var(--medinfo-primary-soft);
+    color: var(--medinfo-primary);
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--medinfo-radius-lg);
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background var(--medinfo-transition-fast), transform var(--medinfo-transition-fast);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.btn-secondary:hover {
+    background-color: var(--medinfo-secondary);
+    transform: translateY(-2px);
+}
+
+/* Carte Google Maps */
+.access iframe {
+    width: 100%;
+    height: 400px; /* hauteur confortable */
+    border-radius: var(--medinfo-radius-lg);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+
+/* Responsive corrections */
+@media (min-width: 768px) {
+    .actions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .specialite-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .actions-grid, .specialite-list {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
+    }
+
+    .dashboard {
+        padding: 1.5rem;
+    }
+
+    .action-card {
+        padding: 1rem;
+    }
+}
+
+
+
+

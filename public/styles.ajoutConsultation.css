@@ -1,0 +1,142 @@
+/* styles.consultation.css */
+
+/* On reprend les variables globales pour garantir la cohérence */
+:root {
+    --medinfo-primary: #4D61F4;
+    --medinfo-primary-soft: #EEF1FF;
+    --medinfo-bg: #FFFFFF;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-radius-lg: 18px;
+    --medinfo-radius-xl: 26px;
+    --medinfo-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --medinfo-transition-fast: 0.18s ease-out;
+}
+
+body {
+    background-color: var(--medinfo-bg-alt);
+    font-family: "Montserrat", sans-serif;
+    color: var(--medinfo-text-main);
+    margin: 0;
+}
+
+/* Conteneur principal centré */
+.medinfo-consultation-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Carte du formulaire */
+.medinfo-consultation-card {
+    background: var(--medinfo-bg);
+    border-radius: var(--medinfo-radius-xl);
+    box-shadow: var(--medinfo-shadow-soft);
+    padding: 32px;
+    border: 1px solid rgba(77, 97, 244, 0.10);
+}
+
+/* En-tête de la carte */
+.medinfo-card-header {
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--medinfo-border-soft);
+    padding-bottom: 16px;
+}
+
+.medinfo-card-title {
+    font-family: "Barlow", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--medinfo-primary);
+    margin: 0;
+}
+
+.medinfo-card-subtitle {
+    font-size: 14px;
+    color: var(--medinfo-text-muted);
+    margin-top: 4px;
+}
+
+/* Grille du formulaire */
+.medinfo-form-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Ligne pour Tension et Poids côte à côte */
+.medinfo-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Groupes de champs (reprise du style connexion) */
+.medinfo-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.medinfo-form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--medinfo-text-main);
+}
+
+.medinfo-form-group input,
+.medinfo-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--medinfo-border-soft);
+    background-color: #F9FAFB;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: var(--medinfo-text-main);
+    transition: all var(--medinfo-transition-fast);
+    resize: vertical; /* Pour les textarea */
+}
+
+.medinfo-form-group input:focus,
+.medinfo-form-group textarea:focus {
+    outline: none;
+    border-color: var(--medinfo-primary);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px var(--medinfo-primary-soft);
+}
+
+/* Bouton de soumission */
+.medinfo-btn-submit {
+    margin-top: 10px;
+    height: 50px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--medinfo-primary), #3F51E8);
+    color: #FFFFFF;
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(77, 97, 244, 0.3);
+    transition: transform var(--medinfo-transition-fast);
+    width: 100%;
+}
+
+.medinfo-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(77, 97, 244, 0.4);
+}
+
+/* Responsive Mobile */
+@media (max-width: 600px) {
+    .medinfo-form-row {
+        grid-template-columns: 1fr; /* Tout sur une colonne */
+    }
+    
+    .medinfo-consultation-card {
+        padding: 20px;
+    }
+}

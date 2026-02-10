@@ -1,0 +1,69 @@
+
+/* Ce fichier vise à enrichir les classes déjà existante pour personnaliser le tableau des rdv*/
+
+        /* Ajustements pour les icônes Google dans les boutons */
+        .material-symbols-outlined {
+            font-size: 20px; /* Taille standardisée */
+            vertical-align: middle;
+        }
+
+        /* Groupes de boutons */
+        .action-btn-group {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+        
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--medinfo-border-soft);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--medinfo-text-muted);
+            text-decoration: none;
+        }
+
+        .btn-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Couleurs d'actions spécifiques */
+        .btn-confirm:hover { border-color: var(--rdv-status-confirmed); color: var(--rdv-status-confirmed); background: #ecfdf5; }
+        .btn-cancel:hover { border-color: var(--rdv-status-cancelled); color: var(--rdv-status-cancelled); background: #fef2f2; }
+        .btn-honor:hover { border-color: var(--rdv-status-honored); color: var(--rdv-status-honored); background: #f0f9ff; }
+        
+        /* Bouton Contact Spécifique */
+        .btn-contact {
+            width: 60px;
+            border-radius: 999em; 
+            color: var(--medinfo-primary);
+            border-color: var(--medinfo-primary-soft);
+            background: var(--medinfo-primary-soft);
+        }
+        .btn-contact:hover {
+            background: var(--medinfo-primary);
+            color: #FFF;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .action-btn-group {
+                justify-content: flex-start;
+                width: 100%;
+                margin-top: 10px;
+            }
+            /* Pour aligner l'icone motif sur mobile */
+            .motif-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end; /* Aligné à droite comme le texte sur mobile */
+                gap: 5px;
+            }
+        }

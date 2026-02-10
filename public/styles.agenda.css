@@ -1,0 +1,248 @@
+/* -------------------------
+   Variables partagées (pour l'exemple)
+   ------------------------- */
+:root {
+    --medinfo-primary: #4D61F4;
+    --medinfo-secondary: #D7FF7B;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-danger: #E53E3E;
+    --medinfo-radius-lg: 18px;
+    --medinfo-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+    --medinfo-transition-fast: 0.18s ease-out;
+
+    /* Couleurs spécifiques à l'agenda */
+    --rdv-status-confirmed: #22C55E; /* Vert */
+    --rdv-status-toconfirm: #F59E0B; /* Jaune/Orange */
+    --rdv-status-cancelled: #EF4444; /* Rouge */
+    --rdv-status-honored: #0EA5E9;   /* Bleu clair */
+    --rdv-status-absent: #6B7280;    /* Gris */
+}
+
+
+/* -------------------------
+   Section globale de l'agenda
+   -------------------------- */
+
+.medinfo-agenda-section {
+    max-width: 1120px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.medinfo-agenda-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--medinfo-border-soft);
+    padding-bottom: 10px;
+}
+
+.medinfo-agenda-header h2 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2rem;
+    color: var(--medinfo-primary);
+    margin: 0;
+}
+
+.medinfo-agenda-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--medinfo-text-muted);
+    margin-top: 5px;
+}
+
+/* -------------------------
+   Liste et cartes de RDV
+   -------------------------- */
+
+.medinfo-rdv-list {
+    display: grid;
+    /* 1 colonne sur mobile, 2 colonnes sur desktop */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 25px;
+}
+
+.medinfo-rdv-card {
+    background: var(--medinfo-bg-alt);
+    border: 1px solid var(--medinfo-border-soft);
+    border-left: 6px solid var(--medinfo-primary); /* Bordure colorée par défaut */
+    border-radius: var(--medinfo-radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    box-shadow: var(--medinfo-shadow-soft);
+    transition: transform var(--medinfo-transition-fast), 
+                box-shadow var(--medinfo-transition-fast);
+}
+
+.medinfo-rdv-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* Bordures colorées selon le statut */
+.medinfo-rdv-card--confirmé {
+    border-left-color: var(--rdv-status-confirmed);
+}
+.medinfo-rdv-card--a_confirmer {
+    border-left-color: var(--rdv-status-toconfirm);
+}
+.medinfo-rdv-card--annulé {
+    border-left-color: var(--rdv-status-cancelled);
+    opacity: 0.7; /* Rendre les annulés moins proéminents */
+}
+.medinfo-rdv-card--honoré {
+    border-left-color: var(--rdv-status-honored);
+}
+.medinfo-rdv-card--absent {
+    border-left-color: var(--rdv-status-absent);
+}
+
+/* -------------------------
+   Structure interne de la carte
+   -------------------------- */
+
+.rdv-card-time-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 80px; /* Assurer l'alignement */
+    text-align: center;
+}
+
+.rdv-time {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--medinfo-primary);
+}
+
+.rdv-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    color: #FFFFFF;
+}
+
+/* Couleurs des badges de statut */
+.rdv-status--confirmé { background: var(--rdv-status-confirmed); }
+.rdv-status--a_confirmer { background: var(--rdv-status-toconfirm); }
+.rdv-status--annulé { background: var(--rdv-status-cancelled); }
+.rdv-status--honoré { background: var(--rdv-status-honored); }
+.rdv-status--absent { background: var(--rdv-status-absent); }
+
+.rdv-card-details {
+    flex-grow: 1; /* Prend l'espace restant */
+    text-align: left;
+}
+
+.rdv-card-details p {
+    margin: 4px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--medinfo-text-main);
+}
+
+.rdv-patient-name {
+    font-weight: 500;
+    font-size: 1rem !important;
+    color: var(--medinfo-primary) !important;
+}
+
+.rdv-patient-name i, .rdv-motif i, .rdv-location i {
+    color: var(--medinfo-text-muted);
+    margin-right: 6px;
+}
+
+.rdv-motif {
+    color: var(--medinfo-text-muted) !important;
+}
+
+.rdv-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 100px;
+}
+
+.rdv-card-actions .medinfo-btn-ghost, 
+.rdv-card-actions .medinfo-btn-primary-nav {
+    height: 32px; /* Rendre les boutons plus compacts pour la carte */
+    font-size: 0.85rem;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.rdv-action-confirm a{
+    color: white;
+    text-decoration: none;
+}
+
+.medinfo-btn-ghost a{
+    text-decoration: none;
+}
+
+.medinfo-no-rdv {
+    grid-column: 1 / -1; /* Centrer le message sur toute la largeur */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--medinfo-primary);
+    padding: 30px;
+    background: var(--medinfo-secondary);
+    border-radius: var(--medinfo-radius-lg);
+}
+
+/* -------------------------
+   Responsive (Mobile)
+   -------------------------- */
+
+@media (max-width: 650px) {
+    .medinfo-agenda-section {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .medinfo-rdv-list {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .medinfo-rdv-card {
+        flex-direction: column; /* Empiler les éléments de la carte */
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .rdv-card-time-status {
+        flex-direction: row; /* Heure et statut sur la même ligne */
+        justify-content: flex-start;
+        width: 100%;
+        min-width: auto;
+        border-bottom: 1px dashed var(--medinfo-border-soft);
+        padding-bottom: 8px;
+    }
+    
+    .rdv-time {
+        font-size: 1.3rem;
+        margin-right: 15px;
+    }
+
+    .rdv-card-details {
+        width: 100%;
+    }
+
+    .rdv-card-actions {
+        flex-direction: row; /* Boutons sur la même ligne en bas */
+        width: 100%;
+        min-width: auto;
+        justify-content: space-around;
+        gap: 10px;
+    }
+}

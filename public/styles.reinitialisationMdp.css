@@ -1,0 +1,115 @@
+:root {
+    --medinfo-primary: #4D61F4;
+    --medinfo-primary-soft: #EEF1FF;
+    --medinfo-secondary: #D7FF7B;
+    --medinfo-bg: #FFFFFF;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-danger: #E53E3E;
+
+    --medinfo-radius-xl: 26px;
+    --medinfo-shadow-soft: 0 18px 40px rgba(15,23,42,0.12);
+    --medinfo-transition-fast: 0.18s ease-out;
+}
+
+body.medinfo-reset-body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background: radial-gradient(circle at top left, #EEF1FF, #F6F8FC 40%, #FFFFFF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.medinfo-reset-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.medinfo-reset-card {
+    background: var(--medinfo-bg);
+    padding: 32px 28px;
+    border-radius: var(--medinfo-radius-xl);
+    box-shadow: var(--medinfo-shadow-soft);
+    border: 1px solid rgba(77, 97, 244, 0.10);
+}
+
+.medinfo-card-title {
+    font-family: "Barlow", sans-serif;
+    font-size: 26px;
+    margin: 0 0 10px 0;
+    color: var(--medinfo-primary);
+}
+
+.medinfo-card-help-text {
+    font-size: 14px;
+    color: var(--medinfo-text-muted);
+    margin-bottom: 28px;
+}
+
+.medinfo-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.medinfo-form-group input {
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 11px;
+    border: 1px solid var(--medinfo-border-soft);
+    background: #F9FAFB;
+    transition: var(--medinfo-transition-fast);
+}
+
+.medinfo-form-group input:focus {
+    outline: none;
+    border-color: var(--medinfo-primary);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(77,97,244,0.25);
+}
+
+.medinfo-btn-primary {
+    width: 100%;
+    margin-top: 10px;
+    height: 45px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--medinfo-primary), #3F51E8);
+    color: #FFF;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--medinfo-transition-fast);
+    box-shadow: 0 14px 30px rgba(77,97,244,0.35);
+}
+
+.medinfo-btn-primary:hover {
+    transform: translateY(-1px);
+}
+
+.medinfo-back-link {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.medinfo-link {
+    color: var(--medinfo-primary);
+    text-decoration: none;
+}
+
+.medinfo-link:hover {
+    text-decoration: underline;
+}
+
+.medinfo-error-text {
+    color: var(--medinfo-danger);
+    font-size: 13px;
+    margin-bottom: 10px;
+}

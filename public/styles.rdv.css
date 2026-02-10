@@ -1,0 +1,121 @@
+:root {
+    --medinfo-primary: #4D61F4;    /* bleu médical principal */
+    --medinfo-primary-soft: #EEF1FF;
+    --medinfo-secondary: #D7FF7B;  /* vert accent */
+    --medinfo-bg: #FFFFFF;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-danger: #E53E3E;
+
+    --medinfo-radius-lg: 18px;
+    --medinfo-radius-xl: 26px;
+    --medinfo-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --medinfo-transition-fast: 0.18s ease-out;
+}
+
+/* Conteneur principal */
+.rdv-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--medinfo-bg-alt);
+}
+
+/* Section du formulaire */
+.rdv-section {
+    background: var(--medinfo-bg);
+    border-radius: var(--medinfo-radius-lg);
+    box-shadow: var(--medinfo-shadow-soft);
+    padding: 2rem;
+}
+
+.rdv-section h2 {
+    color: var(--medinfo-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.rdv-section p {
+    font-size: 0.95rem;
+    color: var(--medinfo-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Formulaire */
+.rdv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rdv-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.rdv-form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--medinfo-text-main);
+}
+
+.rdv-form-group select,
+.rdv-form-group textarea {
+    padding: 0.8rem;
+    border-radius: var(--medinfo-radius-lg);
+    border: 1px solid var(--medinfo-border-soft);
+    font-family: inherit;
+    background-color: var(--medinfo-primary-soft);
+    transition: border-color var(--medinfo-transition-fast), box-shadow var(--medinfo-transition-fast);
+}
+
+.rdv-form-group select:focus,
+.rdv-form-group textarea:focus {
+    border-color: var(--medinfo-primary);
+    outline: none;
+    box-shadow: 0 0 6px rgba(77, 97, 244, 0.25); /* basé sur primary */
+}
+
+.rdv-form-group select:hover,
+.rdv-form-group textarea:hover {
+    border-color: var(--medinfo-primary);
+}
+
+/* Champ obligatoire */
+.required {
+    color: var(--medinfo-danger);
+    font-weight: bold;
+}
+
+/* Bouton */
+.rdv-form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--medinfo-radius-lg);
+    background: linear-gradient(135deg, var(--medinfo-primary), #3a4bd1); /* dégradé basé sur primary */
+    color: var(--medinfo-bg);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform var(--medinfo-transition-fast), box-shadow var(--medinfo-transition-fast);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(77, 97, 244, 0.3); /* basé sur primary */
+}
+
+/* Icône dans le bouton */
+.btn-primary::before {
+    content: "✔️ ";
+    margin-right: 0.3rem;
+}
+
