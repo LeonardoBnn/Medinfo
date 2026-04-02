@@ -9,7 +9,7 @@ if (empty($_SESSION['user'])) {
     ?>
     <section class="main-section">
         <h2>Bienvenue sur MedInfo</h2>
-        <p>Votre plateforme officielle du Centre Médical Ramsay Saint‑Lazare pour prendre rendez-vous en ligne,
+        <p>Votre plateforme officielle du Centre Médical Ramsay Miromesnil pour prendre rendez-vous en ligne,
            simple, rapide et sécurisée.</p>
         <button class="btn-primary"><a style="text-decoration:none;color:white"href="index.php?page=connexion">Prendre rendez-vous</a></button>
     </section>
@@ -41,16 +41,10 @@ if (empty($_SESSION['user'])) {
 
     <section class="access">
         <h3>Nous trouver</h3>
-        <p>Centre Médical Ramsay Saint‑Lazare<br>
-        13 Rue de la Pépinière, 75008 Paris</p>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.462314028329!2d2.324236315674!3d48.87535677928995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a3b5f4b6b%3A0xabcdef123456789!2sCentre%20M%C3%A9dical%20Ramsay%20Sant%C3%A9%20Saint-Lazare!5e0!3m2!1sfr!2sfr!4v1733250000"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+        <p>Centre Médical Ramsay Miromesnil<br>
+        6 Av. César Caire, 75008 Paris</p>
+<iframe id="map-canvas" class="map_part" width="600"  height="450"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=6 av césar caire 75008 paris&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">google maps embed</a> and <a href="https://allabeviljas.se/">sms lån som beviljar alla</a></iframe>
     </section>
-
-
-
 
     <?php
 
