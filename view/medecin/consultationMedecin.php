@@ -1,6 +1,6 @@
 <?php
 require_once ROOT . 'controller/consultation/readConsultationController.php';
-//var_dump($consultations);
+//var_dump($consultationsMedecin);
 //die();
 ?>
 
@@ -18,11 +18,10 @@ require_once ROOT . 'controller/consultation/readConsultationController.php';
                     <th>Patient</th>
                     <th>Compte Rendu</th>
                     <th>Tension/Poids</th>
-                    <th style="text-align: right;">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($consultations as $consultation): ?>
+                <?php foreach ($consultationsMedecin as $consultation): ?>
                 <tr>
                     <td data-label="Date & Heure">
                         <span class="date-badge">
@@ -39,16 +38,13 @@ require_once ROOT . 'controller/consultation/readConsultationController.php';
                         <span class="constante-tag"><?php echo $consultation['tension']; ?></span>
                         <span class="constante-tag"><?php echo $consultation['poids']; ?></span>
                     </td>
-                    <td data-label="Actions" style="text-align: right;">
-                        <a href="#" class="btn-table-action">Voir fiche</a>
-                    </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
     
-    <?php if (empty($consultations)): ?>
+    <?php if (empty($consultationsMedecin)): ?>
         <div class="empty-state">Aucune consultation enregistrée pour le moment.</div>
     <?php endif; ?>
 </div>

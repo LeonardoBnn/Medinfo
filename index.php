@@ -69,6 +69,9 @@ switch($page){
     case 'rdvPatient' :
         require_once("view/patient/rdvPatient.php");
         break;
+    case 'mesConsultations' :
+        require_once("view/patient/consultationPatient.php");
+        break;
 
 
     default:
