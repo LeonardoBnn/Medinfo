@@ -46,8 +46,25 @@ class Consultation{
         return $req->fetchAll();
     }
 
-    public function getConsultationsPatient($id_utilisateur){
+    public function getConsultationsPatient($id_patient){
+        $req = $this->bdd->prepare("
+                        SELECT 
+                            DATE_FORMAT(c.date_saisie, '%d/%m/%Y') AS date,
+                            c.compte_rendu, c.tension, c.poids, 
+                            u.nom, u.prenom 
+                        FROM consultations c
+                        INNER JOIN
+                            medecin m ON c.fk_id_medecin = m.id_medecin
+                        INNER JOIN
+                            utilisateur u ON m.fk_id_utilisateur = u.id_utilisateur
+                        WHERE c.fk_id_patient = :id_patient
+                ");
 
+        $req->bindparam(":id_patient", $id_patient);
+
+        $req->execute();
+
+        return $req->fetchAll();
     }
 }
 
