@@ -53,7 +53,6 @@
                         <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Prendre rendez-vous</a>
                         <a href="index.php?page=rdvPatient" class="medinfo-nav-link">Mes rendez-vous</a>
                         <a href="index.php?page=mesConsultations" class="medinfo-nav-link">Mes consultations</a>
-                        <a href="index.php?page=mesDocuments" class="medinfo-nav-link">Mes documents</a>
                         <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
                     
                     <?php elseif($_SESSION['user']['role'] === 'Medecin'): ?>
@@ -81,7 +80,7 @@
                 <div class="medinfo-header-actions">
                     <!-- Bouton Profil -->
                     <a href="index.php?page=profilPatient" class="profile-btn" aria-label="Mon profil">
-                        <span class="profile-avatar-initial"><?= htmlspecialchars(strtoupper(substr($_SESSION['user']['prenom'] ?? 'U', 0, 1))); ?></span>
+                        <span class="profile-avatar-initial"><?= htmlspecialchars(strtoupper(substr($_SESSION['user']['nom'] ?? 'U', 0, 1))); ?></span>
                         <span class="profile-name-short"><?= htmlspecialchars($_SESSION['user']['prenom'] ?? ''); ?></span>
                         <span class="profile-status-dot" title="Statut"></span>
                     </a>
