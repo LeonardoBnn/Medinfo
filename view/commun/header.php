@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="public/styles.consultations.css">
     <link rel="stylesheet" href="public/styles.rdvMedecin.css">
     <link rel="stylesheet" href="public/styles.rdv.css">
-    <link rel="stylesheet" href="public/styles.profil.css">
 
     <title>MedInfo</title>
 </head>
@@ -75,23 +74,13 @@
                         <button type="button" class="medinfo-btn-primary-nav">S’inscrire</button>
                     </a>
                 </div>
-
             <?php else: ?>
                 <div class="medinfo-header-actions">
-                    <!-- Bouton Profil -->
-                    <a href="index.php?page=profilPatient" class="profile-btn" aria-label="Mon profil">
-                        <span class="profile-avatar-initial"><?= htmlspecialchars(strtoupper(substr($_SESSION['user']['nom'] ?? 'U', 0, 1))); ?></span>
-                        <span class="profile-name-short"><?= htmlspecialchars($_SESSION['user']['prenom'] ?? ''); ?></span>
-                        <span class="profile-status-dot" title="Statut"></span>
-                    </a>
-
-                    <!-- Bouton Déconnexion -->
                     <a href="index.php?page=deconnexion">
                         <button type="button" class="medinfo-btn-primary-nav">Déconnexion</button>
                     </a>
                 </div>
             <?php endif; ?>
-
         </div>
     </div>
 </header>
