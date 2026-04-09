@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="public/styles.consultations.css">
     <link rel="stylesheet" href="public/styles.rdvMedecin.css">
     <link rel="stylesheet" href="public/styles.rdv.css">
+    <link rel="stylesheet" href="public/styles.profil.css">
+    <link rel="stylesheet" href="public/styles.RGPD.css">
 
     <title>MedInfo</title>
 </head>
@@ -76,11 +78,21 @@
                 </div>
             <?php else: ?>
                 <div class="medinfo-header-actions">
+
+                    <a href="index.php?page=profil" class="profile-btn">
+                        <span class="profile-avatar-initial">
+                            <?= htmlspecialchars($_SESSION['user']['prenom'][0]) ?>
+                        </span>
+                    </a>
+
                     <a href="index.php?page=deconnexion">
                         <button type="button" class="medinfo-btn-primary-nav">Déconnexion</button>
                     </a>
+
                 </div>
             <?php endif; ?>
+
+
         </div>
     </div>
 </header>

@@ -27,6 +27,9 @@ switch($page){
     case 'inscription' :
         require_once("view/utilisateur/inscription.php");
         break;
+    case 'profil' :
+        require_once("view/utilisateur/profil.php");
+        break;
     case 'controllerPatient' :
         require_once("controller/patient/controller.patient.php");
         break;
@@ -41,9 +44,6 @@ switch($page){
         break;
     case 'prendreRdv' :
         require_once("view/patient/prendreRdv.php");
-        break;
-    case 'profilPatient' :
-        require_once("view/patient/profilPatient.php");
         break;
     case 'agenda' :
         require_once("view/medecin/agendaMedecin.php");
@@ -72,6 +72,18 @@ switch($page){
     case 'mesConsultations' :
         require_once("view/patient/consultationPatient.php");
         break;
+    case 'CGU':
+        require_once 'view/RGPD/CGU.php';
+        break;
+
+    case 'politiquesConfidentialite':
+        require_once 'view/RGPD/politiqueConfidentialite.php';
+        break;
+
+    case 'mentionsLegales':
+        require_once 'view/RGPD/mentionsLegales.php';
+        break;
+
 
 
     default:

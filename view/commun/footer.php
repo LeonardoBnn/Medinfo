@@ -34,7 +34,9 @@
                         <?php if ($_SESSION['user']['role'] === 'Patient') : ?>
                             <li><a href="index.php?page=prendreRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
                             <li><a href="index.php?page=rdvPatient" class="medinfo-footer-link">Mes rendez-vous</a></li>
+                            <!--
                             <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
+                            -->
 
                         <?php elseif ($_SESSION['user']['role'] === 'Medecin') : ?>
                             <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li>
@@ -56,8 +58,10 @@
                         <h3 class="medinfo-footer-title">Patient</h3>
                         <ul class="medinfo-footer-list">
                             <li><a href="index.php?page=prendreRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
+                            <!--
                             <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
                             <li><a href="index.php?page=mesDocuments" class="medinfo-footer-link">Mes documents</a></li>
+                            -->
                         </ul>
 
                     <?php else : ?>

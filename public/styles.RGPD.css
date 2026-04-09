@@ -1,0 +1,95 @@
+/* ============================
+   PAGE LÉGALE (CGU / RGPD / Mentions)
+   ============================ */
+
+.legal-page {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border-radius: var(--medinfo-radius-xl);
+    box-shadow: var(--medinfo-shadow-soft);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--medinfo-text-main);
+    line-height: 1.7;
+}
+
+/* Titre principal */
+.legal-page h1 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: var(--medinfo-primary);
+    text-align: center;
+}
+
+/* Sous-titres */
+.legal-page h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+    color: var(--medinfo-primary);
+    border-left: 4px solid var(--medinfo-primary);
+    padding-left: 0.6rem;
+}
+
+/* Paragraphes */
+.legal-page p {
+    margin-bottom: 1rem;
+    color: var(--medinfo-text-main);
+}
+
+/* Listes */
+.legal-page ul {
+    margin: 1rem 0 1rem 1.5rem;
+    padding: 0;
+}
+
+.legal-page ul li {
+    margin-bottom: 0.5rem;
+    color: var(--medinfo-text-main);
+}
+
+/* Encadrés d'information */
+.legal-info-box {
+    background: var(--medinfo-primary-soft);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    color: var(--medinfo-primary);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(77, 97, 244, 0.08);
+}
+
+/* Liens */
+.legal-page a {
+    color: var(--medinfo-primary);
+    text-decoration: underline;
+}
+
+.legal-page a:hover {
+    color: var(--medinfo-primary-dark);
+}
+
+/* Séparateur */
+.legal-separator {
+    height: 1px;
+    background: var(--medinfo-primary-soft);
+    margin: 2rem 0;
+    border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-page {
+        padding: 1.5rem;
+    }
+
+    .legal-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .legal-page h2 {
+        font-size: 1.2rem;
+    }
+}
