@@ -54,7 +54,7 @@
                         <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Prendre rendez-vous</a>
                         <a href="index.php?page=rdvPatient" class="medinfo-nav-link">Mes rendez-vous</a>
                         <a href="index.php?page=mesConsultations" class="medinfo-nav-link">Mes consultations</a>
-                        <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
+                        <a href="index.php?page=listeMedecins" class="medinfo-nav-link">Médecins</a>
                     
                     <?php elseif($_SESSION['user']['role'] === 'Medecin'): ?>
                         <!-- Liens Médecin (réduits) -->

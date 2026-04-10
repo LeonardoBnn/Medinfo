@@ -1,4 +1,8 @@
 <?php 
+// Ces trois lignes sont très utiles pour le débug sous linux, il suffit de les décommenter 
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 define('ROOT', __DIR__ . '/');
 
@@ -75,15 +79,15 @@ switch($page){
     case 'CGU':
         require_once 'view/RGPD/CGU.php';
         break;
-
     case 'politiquesConfidentialite':
         require_once 'view/RGPD/politiqueConfidentialite.php';
         break;
-
     case 'mentionsLegales':
         require_once 'view/RGPD/mentionsLegales.php';
         break;
-
+    case 'listeMedecins':
+        require_once 'view/patient/listeMedecins.php';
+        break;
 
 
     default:

@@ -17,16 +17,15 @@ if (empty($_SESSION['user'])) {
     <section class="specialites">
         <h3>Nos spécialités médicales</h3>
         <ul class="specialite-list">
-            <li>🦷 Dentisterie</li>
-            <li>❤️ Cardiologie</li>
-            <li>🌿 Dermatologie</li>
-            <li>👶 Pédiatrie</li>
-            <li>🧠 Neurologie</li>
-            <li>👩‍⚕️ Médecine générale</li>
-            <li>👁️ Ophtalmologie</li>
-            <li>👂 ORL</li>
-            <li>🦴 Orthopédie</li>
-            <li>🧬 Endocrinologie</li>
+            <li><a href="index.php?page=listeMedecins&specialite=1">❤️ Cardiologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=2">🌿 Dermatologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=3">🤰 Gynécologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=4">👶 Pédiatrie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=5">🧠 Neurologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=6">🧬 Endocrinologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=13">👂 ORL</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=14">👁️ Ophtalmologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=16">👩‍⚕️ Médecine générale</a></li>
         </ul>
     </section>
 
@@ -61,16 +60,15 @@ if (empty($_SESSION['user'])) {
     <section class="specialites">
         <h3>Nos spécialités médicales</h3>
         <ul class="specialite-list">
-            <li><a href="index.php?page=listeMedecins&specialite=Dentisterie">🦷 Dentisterie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Cardiologie">❤️ Cardiologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Dermatologie">🌿 Dermatologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Pédiatrie">👶 Pédiatrie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Neurologie">🧠 Neurologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Médecine générale">👩‍⚕️ Médecine générale</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Ophtalmologie">👁️ Ophtalmologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=ORL">👂 ORL</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Orthopédie">🦴 Orthopédie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=Endocrinologie">🧬 Endocrinologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=1">❤️ Cardiologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=2">🌿 Dermatologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=3">🤰 Gynécologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=4">👶 Pédiatrie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=5">🧠 Neurologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=6">🧬 Endocrinologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=13">👂 ORL</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=14">👁️ Ophtalmologie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=16">👩‍⚕️ Médecine générale</a></li>
         </ul>
     </section>
 

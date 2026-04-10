@@ -204,6 +204,14 @@
     font-weight: 500;
 }
 
+.specialite-list li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 /* ===========================
    Boutons secondaires
    =========================== */
