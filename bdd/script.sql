@@ -208,3 +208,38 @@ INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk
 INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES
 ('2025-12-17 09:00:00', '2025-12-17 09:30:00', 'libre', 1, 3, 3),
 ('2025-12-17 09:30:00', '2025-12-17 10:00:00', 'libre', 1, 3, 3);
+
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES 
+('2024-10-10 09:00:00', '2024-10-10 09:30:00', 'occupe', 0, 1, 1),
+('2024-12-05 14:00:00', '2024-12-05 14:30:00', 'occupe', 0, 1, 1),
+('2025-02-20 10:00:00', '2025-02-20 10:30:00', 'occupe', 0, 1, 1),
+('2025-04-15 11:00:00', '2025-04-15 11:30:00', 'occupe', 0, 1, 1), -- Celle-ci est la consultation réutilisée
+('2025-06-12 09:30:00', '2025-06-12 10:00:00', 'occupe', 0, 1, 1),
+('2025-09-30 15:00:00', '2025-09-30 15:30:00', 'occupe', 0, 1, 1);
+
+INSERT INTO rendez_vous (motif, statut, origine, fk_id_patient, fk_id_creneau) VALUES
+('Premier bilan cardiologique', 'honoré', 'Téléphone', 1, 15),
+('Suivi tension artérielle', 'honoré', 'Plateforme en ligne', 1, 16),
+('Contrôle post-traitement', 'honoré', 'Plateforme en ligne', 1, 17),
+('Suivi cardiologique annuel', 'honoré', 'Plateforme en ligne', 1, 18),
+('Certificat médical sport', 'honoré', 'Téléphone', 1, 19),
+('Suivi semestriel', 'honoré', 'Plateforme en ligne', 1, 20);
+
+INSERT INTO consultations (date_saisie, compte_rendu, tension, poids, observations, fk_id_medecin, fk_id_patient) VALUES 
+-- Consultation 1 (Octobre 2024)
+('2024-10-10 09:45:00', 'Premier contact. ECG au repos normal.', '13/8', '80kg', 'Patient à surveiller, légère hypertension.', 1, 1),
+
+-- Consultation 2 (Décembre 2024)
+('2024-12-05 14:40:00', 'Tension toujours un peu élevée. Début de traitement léger.', '14/9', '79kg', 'Réduire la consommation de sel.', 1, 1),
+
+-- Consultation 3 (Février 2025)
+('2025-02-20 10:35:00', 'Le traitement porte ses fruits. Tension stabilisée.', '12/7', '77kg', 'Bonne observance du traitement.', 1, 1),
+
+-- Consultation 4 (Avril 2025 - La réutilisée)
+('2025-04-15 11:30:00', 'Rythme cardiaque régulier. Pas de essoufflement anormal.', '12/8', '78kg', 'Maintenir une activité physique régulière.', 1, 1),
+
+-- Consultation 5 (Juin 2025)
+('2025-06-12 10:10:00', 'Examen pour certificat de sport. Excellente récupération.', '11/7', '76kg', 'Apte à la pratique du cyclisme en compétition.', 1, 1),
+
+-- Consultation 6 (Septembre 2025)
+('2025-09-30 15:40:00', 'Bilan de fin d année. État stable.', '12/8', '77kg', 'Continuer le suivi actuel. Prochain RDV dans 6 mois.', 1, 1);

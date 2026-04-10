@@ -43,11 +43,14 @@
                         <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required>
 
                     </div>
+                    <!-- décommenter cette partie pour activer la fonctionnalité "Mot de passe oubliée"
+                         Les controllers et modèles sont déjà actif.
                     <div class="medinfo-login-meta-row">
                         <a href="index.php?page=mdpOubliee" class="medinfo-link medinfo-link-small">
                             Mot de passe oublié ?
                         </a>
                     </div>
+                     -->
                 </div>
 
                 <?php   //affichage du message d'erreur en cas d'identifiants invalides

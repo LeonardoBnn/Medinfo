@@ -66,9 +66,11 @@
                     <div class="medinfo-form-group">
                         <label for="mdp">Mot de passe</label>
                         <input type="password" id="mdp" name="mdp" required placeholder="••••••••">
+                        <!-- decommenter cette partie pour afficher le message avec les règles pour le mdp 
                         <small class="medinfo-hint">
                             8 caractères minimum, avec une majuscule et un chiffre.
                         </small>
+                            -->
                     </div>
                     <div class="medinfo-form-group">
                         <label for="mdp_confirm">Confirmation</label>
