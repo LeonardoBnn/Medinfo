@@ -31,10 +31,10 @@
 <header class="medinfo-header">
     <div class="medinfo-header-inner">
         <!-- Logo MedInfo -->
-        <a href="index.php" class="medinfo-logo">
-            <span class="medinfo-logo-icon">M</span>
+        <div class="medinfo-logo">
+            <img src="public/img/logo_medinfo.png" alt="Logo MedInfo" class="medinfo-logo-img">
             <span class="medinfo-logo-text">MedInfo</span>
-        </a>
+        </div>
 
         <!-- Toggle mobile -->
         <input type="checkbox" id="medinfo-nav-toggle" class="medinfo-nav-toggle">
