@@ -3,10 +3,10 @@
 
         <!-- Bloc logo + phrase rassurante -->
         <div class="medinfo-footer-brand">
-            <a href="index.php" class="medinfo-logo">
-                <span class="medinfo-logo-icon">M</span>
+            <div class="medinfo-logo">
+                <img src="public/img/logo_medinfo.png" alt="Logo MedInfo" class="medinfo-logo-img">
                 <span class="medinfo-logo-text">MedInfo</span>
-            </a>
+            </div>
             <p class="medinfo-footer-tagline">
                 Prenez rendez-vous simplement dans votre centre médical pluridisciplinaire,
                 en toute sécurité et en quelques clics.

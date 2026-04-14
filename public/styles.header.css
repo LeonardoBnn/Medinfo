@@ -311,3 +311,73 @@
         display: none; /* si tu veux épurer au max sur très petit écran */
     }
 }
+
+
+/* -------------------------
+   Nouveau Logo MedInfo
+-------------------------- */
+
+.medinfo-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* L'espace entre ton image et le texte */
+    margin-bottom: 10px; /* Utile pour le footer */
+}
+
+.medinfo-logo-img {
+    height: 38px; /* Une hauteur idéale pour un header, ajustable selon tes goûts */
+    width: auto;
+    /* L'ombre noire légère autour de l'image : */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+    border-radius: 8px; /* Sécurise les bords arrondis de ton image originale */
+}
+
+.medinfo-logo-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--medinfo-primary);
+    text-decoration: none; /* Empêche tout soulignement indésirable */
+    cursor: default; /* Remet le curseur de la souris classique (pas la petite main) */
+}
+
+/* ===========================
+   Bouton Profil / Avatar
+   =========================== */
+
+/* Le cercle de fond */
+.profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;             /* Largeur du cercle */
+    height: 40px;            /* Hauteur du cercle */
+    border-radius: 50%;      /* Crée un cercle parfait */
+    
+    /* Un joli dégradé utilisant ta couleur primaire */
+    background: linear-gradient(135deg, var(--medinfo-primary), #3F51E8); 
+    text-decoration: none;
+    
+    /* Ombre douce pour donner du relief */
+    box-shadow: 0 4px 10px rgba(77, 97, 244, 0.3); 
+    
+    /* Animation fluide au survol */
+    transition: transform var(--medinfo-transition-fast), 
+                box-shadow var(--medinfo-transition-fast);
+}
+
+/* L'effet quand on passe la souris dessus */
+.profile-btn:hover {
+    transform: translateY(-2px); /* Soulève légèrement le bouton */
+    box-shadow: 0 6px 16px rgba(77, 97, 244, 0.45); /* Accentue l'ombre */
+}
+
+/* Le style de la lettre à l'intérieur */
+.profile-avatar-initial {
+    color: #FFFFFF;          /* Lettre en blanc pour bien ressortir */
+    font-family: 'Barlow', system-ui, sans-serif; /* Ta police de titre */
+    font-size: 18px;         /* Taille de la lettre */
+    font-weight: 700;        /* Lettre en gras */
+    text-transform: uppercase; /* Force la lettre en majuscule quoi qu'il arrive */
+    line-height: 1;          /* Évite les décalages verticaux */
+}
