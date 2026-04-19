@@ -58,7 +58,7 @@
                     
                     <?php elseif($_SESSION['user']['role'] === 'Medecin'): ?>
                         <!-- Liens Médecin (réduits) -->
-                        <a href="index.php?page=agenda" class="medinfo-nav-link">Mon agenda</a>
+                        <!--<a href="index.php?page=agenda" class="medinfo-nav-link">Mon agenda</a>-->
                         <a href="index.php?page=gestionRdv" class="medinfo-nav-link">Rendez-Vous</a>
                         <a href="index.php?page=consultationMedecin" class="medinfo-nav-link">Consultations</a>
                         <!-- Les autres outils (créneaux, patients, ajout consultation) sont accessibles depuis l'accueil médecin -->

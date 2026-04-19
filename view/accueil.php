@@ -95,41 +95,82 @@ if (empty($_SESSION['user'])) {
         <p>Bienvenue dans votre espace professionnel du Centre Médical Ramsay Saint‑Lazare.</p>
     </section>
 
-    <section class="mini-agenda">
-    <h3>Agenda du jour</h3>
+    <?php 
+    require_once ROOT . 'controller/rendez_vous/readRdvMedecins.php';
+    ?>
 
-        <?php if (!empty($rdvMedecins)): ?>
-            <ul class="mini-agenda-list">
-                <?php foreach ($rdvMedecins as $rdv): ?>
-                    <li class="mini-agenda-item mini-agenda-item--<?= $rdv['rdv_statut'] ?>">
-                        <span class="mini-time"><?= $rdv['heure_debut_formatee'] ?></span>
-                        <span class="mini-name"><?= $rdv['patient_prenom'] . ' ' . $rdv['patient_nom'] ?></span>
-                        <span class="mini-status"><?= match($rdv['rdv_statut']) {
-                            'confirmé' => 'Confirmé',
-                            'a_confirmer' => 'À confirmer',
-                            'annulé' => 'Annulé',
-                            'honoré' => 'Honoré',
-                            'absent' => 'Absent'
-                        } ?></span>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+    <section class="agenda-accueil">
+        <div class="medinfo-agenda-section">
+            <div class="medinfo-agenda-header">
+                <h2>🗓️ Mon Agenda du Jour</h2>
+                <p class="medinfo-agenda-date">
+                    <?= ucfirst($formatter->format(new DateTime())); ?>
+                </p>
+            </div>
 
-            <a href="index.php?page=agenda" class="mini-agenda-link">Voir l’agenda complet</a>
+            <div class="medinfo-rdv-list">
+                <?php if (!empty($rdvMedecins)): ?>
+                    <?php foreach ($rdvMedecins as $rdv): ?>
+                        <div class="medinfo-rdv-card medinfo-rdv-card--<?= $rdv['rdv_statut'] ?>" data-rdv-id="<?= $rdv['id_rdv'] ?>">
+                            <div class="rdv-card-time-status">
+                                <span class="rdv-time"><?= $rdv['heure_debut_formatee'] ?></span>
+                                <span class="rdv-status rdv-status--<?= $rdv['rdv_statut'] ?>">
+                                    <?= match($rdv['rdv_statut']) {
+                                        'confirmé' => 'Confirmé',
+                                        'a_confirmer' => 'À confirmer',
+                                        'annulé' => 'Annulé',
+                                        'honoré' => 'Honoré',
+                                        'absent' => 'Absent'
+                                    } ?>
+                                </span>
+                            </div>
 
-        <?php else: ?>
-            <p class="mini-agenda-empty">Aucun rendez-vous prévu aujourd’hui.</p>
-        <?php endif; ?>
+                            <div class="rdv-card-details">
+                                <p class="rdv-patient-name">
+                                    <i class="fas fa-user-circle"></i> 
+                                    <?= $rdv['patient_prenom'] ?> <strong><?= $rdv['patient_nom'] ?></strong>
+                                </p>
+                                <p class="rdv-motif">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <?= $rdv['motif'] ?>
+                                </p>
+                                <p class="rdv-location">
+                                    <i class="fas fa-hospital"></i> 
+                                    <?= $rdv['salle_libelle'] ?>
+                                </p>
+                            </div>
+
+                            <div class="rdv-card-actions">
+                                <button class="medinfo-btn-ghost rdv-action-detail">
+                                    <a href="index.php?page=ajouterConsultation&id_patient=<?= $rdv['id_patient'] ?>">Démarrer</a>
+                                </button>
+
+                                <?php if ($rdv['rdv_statut'] === 'a_confirmer'): ?>
+                                    <button class="medinfo-btn-primary-nav rdv-action-confirm">
+                                        <a href="index.php?page=controllerRdv">Confirmer</a>
+                                    </button>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p class="medinfo-no-rdv">Aucun rendez-vous planifié pour aujourd'hui. Profitez-en !</p>
+                <?php endif; ?>
+            </div>
+        </div>
     </section>
 
 
+    
     <section class="dashboard medecin-dashboard">
         <h3>Mes outils</h3>
         <div class="actions-grid">
+    <!--
             <a href="index.php?page=agenda" class="action-card">
                 <span class="icon">📅</span>
                 <span class="text">Mon agenda</span>
             </a>
+    -->
             <a href="index.php?page=gestionRdv" class="action-card">
                 <span class="icon">📋</span>
                 <span class="text">Gestion des rendez-vous</span>

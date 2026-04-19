@@ -39,7 +39,7 @@
                             -->
 
                         <?php elseif ($_SESSION['user']['role'] === 'Medecin') : ?>
-                            <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li>
+                        <!--    <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li> -->
                             <li><a href="index.php?page=gestionRdv" class="medinfo-footer-link">Gestion des RDV</a></li>
                             <li><a href="index.php?page=consultationMedecin" class="medinfo-footer-link">Consultations</a></li>
                         <?php endif; ?>
@@ -67,7 +67,7 @@
                     <?php else : ?>
                         <h3 class="medinfo-footer-title">Médecin</h3>
                         <ul class="medinfo-footer-list">
-                            <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li>
+                        <!--    <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li>   -->
                             <li><a href="index.php?page=gestionRdv" class="medinfo-footer-link">Gestion RDV</a></li>
                             <li><a href="index.php?page=consultationMedecin" class="medinfo-footer-link">Consultations</a></li>
                         </ul>
