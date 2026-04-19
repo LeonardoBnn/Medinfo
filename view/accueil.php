@@ -106,10 +106,12 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">📋</span>
                 <span class="text">Gestion des rendez-vous</span>
             </a>
+            <!--
             <a href="index.php?page=creneauxMedecin" class="action-card">
                 <span class="icon">🗓️</span>
                 <span class="text">Mes créneaux</span>
             </a>
+            -->
             <a href="index.php?page=consultationMedecin" class="action-card">
                 <span class="icon">🩺</span>
                 <span class="text">Historique des consultations</span>
@@ -118,11 +120,13 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">➕</span>
                 <span class="text">Démarrer une consultation</span>
             </a>
+            <!--
             <a href="index.php?page=mesPatients" class="action-card">
                 <span class="icon">👥</span>
                 <span class="text">Mes patients</span>
             </a>
         </div>
+            -->
     </section>
     <?php
 
