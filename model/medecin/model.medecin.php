@@ -97,14 +97,23 @@ class Medecin extends Utilisateur {
     public function GetMedecinOncheckLogin($user){
        
         $req = $this->bdd->prepare("
-                SELECT 
-                m.id_medecin, m.rpps, m.est_conventionne, m.formations, m.langues_parlees, m.experiences, m.description
-                
-            FROM 
-                medecin m
-            WHERE 
-                m.fk_id_utilisateur = :id_utilisateur
-            ");
+        SELECT 
+            m.id_medecin,
+            m.rpps,
+            m.est_conventionne,
+            m.formations,
+            m.langues_parlees,
+            m.experiences,
+            m.description,
+            m.fk_id_specialite,
+            s.libelle AS libelle_specialite
+        FROM 
+            medecin m
+        JOIN 
+            specialite s ON m.fk_id_specialite = s.id_specialite
+        WHERE 
+            m.fk_id_utilisateur = :id_utilisateur
+    ");
 
         $req->bindparam(':id_utilisateur', $user["id_utilisateur"]);
         $req->execute();
