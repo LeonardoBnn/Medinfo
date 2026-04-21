@@ -51,7 +51,9 @@ function getStatusLabel($statut) {
                             <td colspan="6" class="empty-state">Aucun rendez-vous prévu.</td>
                         </tr>
                     <?php else: ?>
-                        <?php foreach ($rendezVousList as $rdv): ?>
+                        <?php foreach ($rendezVousList as $rdv):
+				//var_dump($rdv['patient_email']);
+				//die();			 ?>
                         <tr>
                             <td data-label="Heure">
                                 <div class="date-badge">
@@ -75,7 +77,7 @@ function getStatusLabel($statut) {
                             <td data-label="Contact">
                                 <a href="mailto:<?php echo $rdv['patient_email']; ?>?subject=Rappel de Rendez-vous - MedInfo" 
                                    class="btn-icon btn-contact" 
-                                   title="Envoyer un email à <?php echo htmlspecialchars($rdv['patient']); ?>">
+                                   title="Envoyer un email à <?php echo htmlspecialchars($rdv['patient_email']); ?>">
                                     <span class="material-symbols-outlined">mail</span>
                                 </a>
                             </td>

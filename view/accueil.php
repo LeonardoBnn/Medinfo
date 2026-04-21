@@ -185,10 +185,12 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">🩺</span>
                 <span class="text">Historique des consultations</span>
             </a>
+            <!--
             <a href="index.php?page=ajouterConsultation" class="action-card">
                 <span class="icon">➕</span>
                 <span class="text">Démarrer une consultation</span>
             </a>
+	    -->	
             <!--
             <a href="index.php?page=mesPatients" class="action-card">
                 <span class="icon">👥</span>
