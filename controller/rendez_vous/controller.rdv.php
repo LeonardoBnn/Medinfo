@@ -46,14 +46,14 @@ class RdvController {
             $_POST['id_creneau']
         );
 
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=rdvPatient');
+        header('Location: /promo300/medinfo/index.php?page=rdvPatient');
         exit;
     }
 
     public function delete() {
         $this->rdv->supprimerRdv($_POST['id_rdv']);
 
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=rdvPatient');
+        header('Location: /promo300/medinfo/index.php?page=rdvPatient');
         exit;
     }
 
@@ -61,7 +61,7 @@ class RdvController {
 
         $this->rdv->updateRdvStatus($rdv_id, $rdvStatut);
 
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=gestionRdv');
+        header('Location: /promo300/medinfo/index.php?page=gestionRdv');
         exit;
     }
 

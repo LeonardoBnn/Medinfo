@@ -29,7 +29,7 @@ class consultationController{
     public function create(){
 
         $this->consultation->ajouterConsultation($_POST['compte_rendu'], $_POST['tension'], $_POST['poids'], $_POST['observations'], $_POST['id_medecin'],$_POST['id_patient']);
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=agenda');
+        header('Location: /promo300/medinfo/index.php?page=agenda');
     }
 }
 

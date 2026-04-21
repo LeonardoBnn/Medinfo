@@ -21,7 +21,7 @@ if(isset($_POST['action'])){
             if($patient){
                 session_start();
                 $_SESSION['user'] = $patient;
-                header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil'); 
+                header('Location: /promo300/medinfo/index.php?page=accueil'); 
             }
             break;            
             
@@ -31,13 +31,13 @@ if(isset($_POST['action'])){
             if($medecin){
                 session_start();
                 $_SESSION['user'] = $medecin;
-                header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil'); 
+                header('Location: /promo300/medinfo/index.php?page=accueil'); 
             }
             break;            
     }
     }else{
         $_SESSION['login_error'] = "Identifiants incorrects. Veuillez réessayer.";
-        header('Location: http://127.0.0.1/promo300/medinfo/index.php?page=connexion');
+        header('Location: /promo300/medinfo/index.php?page=connexion');
         exit;
     }
 }
