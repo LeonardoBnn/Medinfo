@@ -1,6 +1,6 @@
 <?php
-//require_once ROOT . "model/utilisateur/model.Utilisateur.php"; 
-include('model/utilisateur/model.Utilisateur.php');
+require_once ROOT . "model/utilisateur/model.utilisateur.php"; 
+
 
 class Patient extends Utilisateur
 {
