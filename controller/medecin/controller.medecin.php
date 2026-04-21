@@ -50,11 +50,11 @@ class medecinController{
         if ($user) {
             session_start();
             $_SESSION['user'] = $user;
-            header('Location:https://127.0.0.1/promo300/medinfo/index.php?page=accueil');
+            header('Location: /promo300/medinfo/index.php?page=accueil');
             exit;
         } else {
             $_SESSION['login_error'] = "Identifiants incorrects. Veuillez réessayer.";
-            header('Location: https://127.0.0.1/promo300/medinfo/index.php?page=connexion');
+            header('Location: /promo300/medinfo/index.php?page=connexion');
             exit;
         }
 
@@ -76,7 +76,7 @@ class medecinController{
         }
 
         // ce lien est utilisé dans PHPMailer pour reinitialiser le mdp
-        $lienReset = "https://127.0.0.1/promo300/medinfo/index.php?page=reinitMdp&token=" . urlencode($token);
+        $lienReset = "/promo300/medinfo/index.php?page=reinitMdp&token=" . urlencode($token);
 
         $envoiOK = sendResetEmail($email, $lienReset);
 

@@ -55,13 +55,13 @@ class patientController{
 
     public function create(){
         $this->patient->createPatient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['tel'], $_POST['date_naissance'], $_POST['adresse'], $_POST['num_secu'], $_POST['sexe']);
-        header('Location:http://127.0.0.1/promo300/MedInfo/index.php?page=connexion');
+        header('Location: /promo300/MedInfo/index.php?page=connexion');
     }
 
     public function delete(){
 
         $this->patient->deleteUtilisateur($_POST['id_utilisateur']);
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil');
+        header('Location: /promo300/medinfo/index.php?page=accueil');
     }
 
     public function Login(){
@@ -71,11 +71,11 @@ class patientController{
         if ($user) {
             session_start();
             $_SESSION['user'] = $user;
-            header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil');
+            header('Location: /promo300/medinfo/index.php?page=accueil');
             exit;
         } else {
             $_SESSION['login_error'] = "Identifiants incorrects. Veuillez réessayer.";
-            header('Location: http://127.0.0.1/promo300/medinfo/index.php?page=connexion');
+            header('Location: /promo300/medinfo/index.php?page=connexion');
             exit;
         }
 
@@ -84,7 +84,7 @@ class patientController{
     public function update(){
 
         $this->patient->updatePatient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['date_naissance'], $_POST['adresse'], $_POST['num_secu'], $_POST['sexe'], $_POST['id_patient'], $_POST['id_utilisateur']);
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil');
+        header('Location: /promo300/medinfo/index.php?page=accueil');
     }
 
     public function motDePasseOublie()
@@ -103,7 +103,7 @@ class patientController{
         }
 
         // ce lien est utilisé dans PHPMailer pour reinitialiser le mdp
-        $lienReset = "http://127.0.0.1/promo300/medinfo/index.php?page=reinitMdp&token=" . urlencode($token);
+        $lienReset = "/promo300/medinfo/index.php?page=reinitMdp&token=" . urlencode($token);
 
         $envoiOK = sendResetEmail($email, $lienReset);
 

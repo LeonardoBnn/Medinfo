@@ -98,7 +98,7 @@ switch($page){
         break;
     case 'deconnexion':
         session_destroy();
-        header('Location:http://127.0.0.1/promo300/medinfo/index.php?page=accueil');
+        header('Location: /promo300/medinfo/index.php?page=accueil');
         break;
 }
 
