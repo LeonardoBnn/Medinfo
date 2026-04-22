@@ -1,0 +1,126 @@
+/* ============================
+   PAGE MODIFIER PROFIL
+   ============================ */
+
+.edit-profile-page {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    background: var(--medinfo-bg);
+    border-radius: var(--medinfo-radius-xl);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.edit-profile-page h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--medinfo-primary);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ============================
+   FORMULAIRE
+   ============================ */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--medinfo-text-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--medinfo-border-soft);
+    border-radius: var(--medinfo-radius-lg);
+    background: var(--medinfo-bg-alt);
+    font-size: 15px;
+    color: var(--medinfo-text-main);
+    transition: border var(--medinfo-transition-fast), background var(--medinfo-transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--medinfo-primary);
+    background: var(--medinfo-primary-soft);
+}
+
+/* ============================
+   BOUTON ENREGISTRER
+   ============================ */
+
+.btn-save {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background: var(--medinfo-primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--medinfo-radius-lg);
+    cursor: pointer;
+    transition: background var(--medinfo-transition-fast), transform var(--medinfo-transition-fast);
+}
+
+.btn-save:hover {
+    background: #3c4edb; /* version plus foncée du bleu */
+    transform: translateY(-2px);
+}
+
+.btn-save:active {
+    transform: translateY(0);
+}
+
+.btn-edit-profile {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+
+    background: transparent;
+    color: var(--medinfo-primary);
+    border: 2px solid var(--medinfo-primary);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: var(--medinfo-radius-lg);
+    text-decoration: none;
+
+    transition: var(--medinfo-transition-fast);
+}
+
+.btn-edit-profile:hover {
+    background: var(--medinfo-primary-soft);
+}
+
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 600px) {
+    .edit-profile-page {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .edit-profile-page h1 {
+        font-size: 24px;
+    }
+}

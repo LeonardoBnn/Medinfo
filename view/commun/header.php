@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="public/styles.rdv.css">
     <link rel="stylesheet" href="public/styles.profil.css">
     <link rel="stylesheet" href="public/styles.RGPD.css">
+    <link rel="stylesheet" href="public/styles.modifierProfil.css">
 
     <title>MedInfo</title>
 </head>

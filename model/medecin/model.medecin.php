@@ -42,17 +42,19 @@ class Medecin extends Utilisateur {
     }
 
     // Mettre à jour un médecin
-    public function updateMedecin($id_medecin, $rpps, $est_conventionne, $formations, $langues, $experiences, $description, $fk_id_specialite){
-        $req = $this->bdd->prepare("UPDATE medecin 
-                                    SET rpps = :rpps, est_conventionne = :est_conventionne, formations = :formations, langues_parlees = :langues, experiences = :experiences, description = :description, fk_id_specialite = :fk_id_specialite
-                                    WHERE id_medecin = :id_medecin");
-        $req->bindParam(':rpps', $rpps);
-        $req->bindParam(':est_conventionne', $est_conventionne);
-        $req->bindParam(':formations', $formations);
-        $req->bindParam(':langues', $langues);
-        $req->bindParam(':experiences', $experiences);
+    public function updateMedecin($nom, $prenom, $email, $tel, $description, $id_medecin, $id_utilisateur)
+    {
+        // 1) update table utilisateur (nom, prenom, email, tel)
+        $this->updateUtilisateur($nom, $prenom, $email, $tel, $id_utilisateur);
+
+        // 2) update table medecin
+        $req = $this->bdd->prepare("
+            UPDATE medecin
+            SET description = :description
+            WHERE id_medecin = :id_medecin
+        ");
+
         $req->bindParam(':description', $description);
-        $req->bindParam(':fk_id_specialite', $fk_id_specialite);
         $req->bindParam(':id_medecin', $id_medecin);
 
         return $req->execute();
@@ -95,7 +97,7 @@ class Medecin extends Utilisateur {
 
     // Créer une consultation
     public function GetMedecinOncheckLogin($user){
-       
+
         $req = $this->bdd->prepare("
         SELECT 
             m.id_medecin,

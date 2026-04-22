@@ -43,14 +43,13 @@ class Utilisateur{
         return $req->fetchAll();
     }
 
-    public function updateUtilisateur($nom, $prenom, $email, $tel, $date_naissance, $id_utilisateur){
+    public function updateUtilisateur($nom, $prenom, $email, $tel, $id_utilisateur){
 
-        $req = $this->bdd->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email= :email, telephone = :tel, date_naissance = :date_naissance WHERE id_utilisateur = :id_utilisateur");
+        $req = $this->bdd->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email= :email, telephone = :tel WHERE id_utilisateur = :id_utilisateur");
         $req->bindParam(':nom', $nom);
         $req->bindParam(':prenom', $prenom);
         $req->bindParam(':email', $email);
         $req->bindParam(':tel', $tel);
-        $req->bindParam(':date_naissance', $date_naissance);
         $req->bindParam(':id_utilisateur', $id_utilisateur);
 
         return $req->execute();

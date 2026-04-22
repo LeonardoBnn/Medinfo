@@ -81,11 +81,39 @@ class patientController{
 
     }
 
-    public function update(){
+    public function update() {
 
-        $this->patient->updatePatient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['date_naissance'], $_POST['adresse'], $_POST['num_secu'], $_POST['sexe'], $_POST['id_patient'], $_POST['id_utilisateur']);
-        header('Location: /promo300/medinfo/index.php?page=accueil');
+
+        $id_utilisateur = $_SESSION['user']['id_utilisateur'];
+        $id_patient = $_SESSION['user']['id_patient'];
+
+        // 1) Mise à jour patient (updateUtilisateur est déjà appelé dedans)
+        $this->patient->updatePatient(
+            $_POST['nom'],
+            $_POST['prenom'],
+            $_POST['email'],
+            $_POST['tel'],
+            $_POST['adresse'],
+            //$_POST['num_secu'],
+            $_POST['sexe'],
+            $id_patient,
+            $id_utilisateur
+        );
+
+        // 2) Mise à jour session
+        $_SESSION['user']['nom'] = $_POST['nom'];
+        $_SESSION['user']['prenom'] = $_POST['prenom'];
+        $_SESSION['user']['email'] = $_POST['email'];
+        $_SESSION['user']['telephone'] = $_POST['tel'];
+        $_SESSION['user']['adresse'] = $_POST['adresse'];
+        //$_SESSION['user']['num_secu'] = $_POST['num_secu'];
+        $_SESSION['user']['sexe'] = $_POST['sexe'];
+
+        // 3) Redirection vers le profil
+        header("Location: index.php?page=profil");
+        exit;
     }
+
 
     public function motDePasseOublie()
     {

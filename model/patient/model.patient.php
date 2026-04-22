@@ -77,20 +77,19 @@ class Patient extends Utilisateur
 
 
     // mettre à jour un patient
-    public function updatePatient($nom, $prenom, $email, $tel, $date_naissance, $adresse, $num_secu, $sexe, $id_patient, $id_utilisateur)
+
+    public function updatePatient($nom, $prenom, $email, $tel, $adresse, $sexe, $id_patient, $id_utilisateur)
     {
 
-        $this->updateUtilisateur($nom, $prenom, $email, $tel, $date_naissance, $id_utilisateur);
+        $this->updateUtilisateur($nom, $prenom, $email, $tel, $adresse, $id_utilisateur);
 
         $req = $this->bdd->prepare("
             UPDATE patient
             SET adresse = :adresse,
-                num_secu = :num_secu,
                 sexe = :sexe
             WHERE id_patient = :id_patient
         ");
         $req->bindParam(':adresse', $adresse);
-        $req->bindParam(':num_secu', $num_secu);
         $req->bindParam(':sexe', $sexe);
         $req->bindParam(':id_patient', $id_patient);
 

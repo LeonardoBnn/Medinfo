@@ -34,6 +34,12 @@ switch($page){
     case 'profil' :
         require_once("view/utilisateur/profil.php");
         break;
+    case 'modifierProfil':
+        require_once("view/utilisateur/modifierProfil.php");
+        break;
+    case 'controllerMedecin' :
+        require_once("controller/medecin/controller.medecin.php");
+        break;
     case 'controllerPatient' :
         require_once("controller/patient/controller.patient.php");
         break;
