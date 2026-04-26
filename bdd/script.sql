@@ -123,6 +123,47 @@ CREATE TABLE documentation(
 
 );
 
+DELIMITER //
+
+CREATE PROCEDURE generer_planning_medecin(
+    IN p_id_medecin INT,
+    IN p_id_salle INT,
+    IN p_date_debut DATETIME,
+    IN p_date_fin DATETIME,
+    IN p_duree_minutes INT
+)
+BEGIN
+    DECLARE v_current_time DATETIME;
+    SET v_current_time = p_date_debut;
+
+    -- Boucle tant que l'heure courante + la durée ne dépasse pas la date de fin prévue
+    WHILE v_current_time < p_date_fin DO
+        
+        INSERT INTO creneau (
+            date_heure_debut, 
+            date_heure_fin, 
+            statut, 
+            disponibilite, 
+            fk_id_medecin, 
+            fk_id_salle
+        ) 
+        VALUES (
+            v_current_time, 
+            DATE_ADD(v_current_time, INTERVAL p_duree_minutes MINUTE), 
+            'libre', 
+            1, 
+            p_id_medecin, 
+            p_id_salle
+        );
+
+        -- On avance l'heure courante pour le prochain créneau
+        SET v_current_time = DATE_ADD(v_current_time, INTERVAL p_duree_minutes MINUTE);
+        
+    END WHILE;
+END //
+
+DELIMITER ;
+
 
 -- jeux de données pour alimenter la BDD
 INSERT INTO specialite (libelle) VALUES
@@ -154,7 +195,8 @@ INSERT INTO utilisateur (nom, prenom, email, hash_password, telephone, role, dat
 ('Benali', 'Mohamed', 'm.benali@medinfo.fr', SHA1('Generaliste77'), '0677889900', 'Medecin', '1975-11-03'),
 ('Romano', 'Elisa', 'e.romano@medinfo.fr', SHA1('Gyneco2025'), '0655443322', 'Medecin', '1984-02-14'),
 ('Caron', 'Julien', 'j.caron@medinfo.fr', SHA1('Pediatrie01'), '0644221133', 'Medecin', '1983-09-17'),
-('Bonino', 'Leonardo', 'boninoleonardo@gmail.com', SHA1('#8367'), '0749034251', 'Patient', '2000-03-24');
+('Bonino', 'Leonardo', 'boninoleonardo@gmail.com', SHA1('#8367'), '0749034251', 'Patient', '2000-03-24'),
+('Brest', 'Paris', 'p.brest@medinfo.fr', SHA1('Secretaire123'), '0745033461', '', '2000-03-24');
 
 INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description, fk_id_utilisateur, fk_id_specialite) VALUES 
 ('12345678901', 'DES Cardiologie', 'Français, Anglais', '15 ans en CHU', 'Spécialiste du cœur, diagnostic rapide et prise en charge complète.', 1, 1),
