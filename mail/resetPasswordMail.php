@@ -1,10 +1,10 @@
 <?php
-
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //inclusion des fichiers nécessaires au fonctionnement de PHPMailer
-require __DIR__ . '/../phpmailer/src/Exception.php';
+//require __DIR__ . '/../phpmailer/src/Exception.php';
 require __DIR__ . '/../phpmailer/src/PHPMailer.php';
 require __DIR__ . '/../phpmailer/src/SMTP.php';
 
@@ -72,3 +72,4 @@ function sendResetEmail($toEmail, $resetLink)
         return false;
     }
 }
+*/
