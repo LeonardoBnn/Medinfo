@@ -196,7 +196,9 @@ INSERT INTO utilisateur (nom, prenom, email, hash_password, telephone, role, dat
 ('Romano', 'Elisa', 'e.romano@medinfo.fr', SHA1('Gyneco2025'), '0655443322', 'Medecin', '1984-02-14'),
 ('Caron', 'Julien', 'j.caron@medinfo.fr', SHA1('Pediatrie01'), '0644221133', 'Medecin', '1983-09-17'),
 ('Bonino', 'Leonardo', 'boninoleonardo@gmail.com', SHA1('#8367'), '0749034251', 'Patient', '2000-03-24'),
-('Brest', 'Paris', 'p.brest@medinfo.fr', SHA1('Secretaire123'), '0745033461', '', '2000-03-24');
+('Brest', 'Paris', 'p.brest@medinfo.fr', SHA1('Secretaire123'), '0745033461', 'Secretaire', '2000-03-24'),
+(8, 'Siazon', 'Jc', 'siazon.jeanchristophe.pro@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2026-04-29 15:34:10', '0619737802', 'Patient', '2006-06-12', NULL, NULL);
+
 
 INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description, fk_id_utilisateur, fk_id_specialite) VALUES 
 ('12345678901', 'DES Cardiologie', 'Français, Anglais', '15 ans en CHU', 'Spécialiste du cœur, diagnostic rapide et prise en charge complète.', 1, 1),
@@ -206,7 +208,8 @@ INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description
 ('56789012345', 'DES Pédiatrie', 'Français, Anglais', '9 ans en pédiatrie hospitalière', 'Pédiatre attentionné, suivi de l’enfant et de l’adolescent.', 5, 4);
 
 INSERT INTO patient(adresse, num_secu, sexe, fk_id_utilisateur) VALUES
-('94 Rue de Reuilly 75012 Paris', '238293828382828', 'homme', 6);
+('94 Rue de Reuilly 75012 Paris', '238293828382828', 'homme', 6),
+(2, '78170', '01060699966', 'homme', 8);
 
 
 -- Création de trois salles de consultation
