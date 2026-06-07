@@ -261,9 +261,9 @@ INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk
 
 -- Prise des 3 RDV passés
 INSERT INTO rendez_vous (date_creation, motif, statut, origine, fk_id_patient, fk_id_creneau) VALUES
-('2026-05-01 10:00:00', 'Fièvre et toux', 'honoré', 'Doctolib', 1, 1),
-('2026-05-05 11:00:00', 'Détartrage', 'honoré', 'Téléphone', 2, 2),
-('2026-05-10 09:00:00', 'Vaccin Fièvre Jaune', 'honoré', 'Sur place', 3, 3);
+('2026-05-01 10:00:00', 'Fièvre et toux', 'honoré', 'Plateforme Web', 1, 1),
+('2026-05-05 11:00:00', 'Détartrage', 'honoré', 'Plateforme Web', 2, 2),
+('2026-05-10 09:00:00', 'Vaccin Fièvre Jaune', 'honoré', 'Plateforme Web', 3, 3);
 
 -- Consultations complétées pour ces 3 RDV
 INSERT INTO consultations (date_saisie, compte_rendu, tension, poids, observations, fk_id_medecin, fk_id_patient) VALUES 
@@ -296,6 +296,6 @@ CALL generer_planning_medecin(5, 5, '2026-06-11 09:00:00', '2026-06-11 18:00:00'
 UPDATE creneau SET statut = 'occupe', disponibilite = 0 WHERE id_creneau IN (4, 5, 25);
 
 INSERT INTO rendez_vous (motif, statut, origine, fk_id_patient, fk_id_creneau) VALUES
-('Renouvellement ordonnance', 'confirmé', 'Doctolib', 1, 4),
-('Bilan sanguin annuel', 'a_confirmer', 'Téléphone', 4, 5),
-('Douleur thoracique', 'confirmé', 'Sur place', 5, 25);
+('Renouvellement ordonnance', 'confirmé', 'Plateforme Web', 1, 4),
+('Bilan sanguin annuel', 'a_confirmer', 'Plateforme Web', 4, 5),
+('Douleur thoracique', 'confirmé', 'Plateforme Web', 5, 25);
