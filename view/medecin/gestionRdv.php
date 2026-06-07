@@ -37,7 +37,7 @@ function getStatusLabel($statut) {
             <table class="medinfo-table">
                 <thead>
                     <tr>
-                        <th width="8%">Heure</th>
+                        <th width="8%">Date et heure</th>
                         <th width="17%">Patient</th>
                         <th width="25%">Motif</th>
                         <th width="10%">Contact</th>
@@ -55,9 +55,18 @@ function getStatusLabel($statut) {
 				//var_dump($rdv['patient_email']);
 				//die();			 ?>
                         <tr>
-                            <td data-label="Heure">
+                            <td data-label="Date et Heure">
                                 <div class="date-badge">
-                                    <span><?php echo $rdv['heure_debut_formatee']; ?></span>
+                                    <?php 
+                                        // Extraction et formatage de la date depuis 'date_heure_fin'
+                                        $dateRdv = date('d/m/Y', strtotime($rdv['date_heure_fin'])); 
+                                    ?>
+                                    <span style="font-weight: bold; display: block; margin-bottom: 4px;">
+                                        <?php echo $dateRdv; ?>
+                                    </span>
+                                    <span class="text-muted">
+                                        <?php echo $rdv['heure_debut_formatee']; ?>
+                                    </span>
                                 </div>  
                             </td>
 

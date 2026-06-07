@@ -18,6 +18,7 @@ if (isset($_POST['action'])) {
 
         // Tu pourras ajouter d'autres cas si besoin (modifier, annuler, etc.)
     }
+
 }
 
 if(isset($_GET['action'])){
@@ -45,6 +46,8 @@ class RdvController {
             $_POST['id_patient'], 
             $_POST['id_creneau']
         );
+        $this->rdv->updateStatutCreneau($_POST['statut'], $_POST['id_creneau']);
+
 
         header('Location: /index.php?page=rdvPatient');
         exit;
@@ -59,12 +62,23 @@ class RdvController {
 
     public function updateRdv($rdv_id, $rdvStatut){
 
+        // 1. On met à jour le statut du RDV (confirmé, honoré, annulé...)
         $this->rdv->updateRdvStatus($rdv_id, $rdvStatut);
+
+        // 2. Si le nouveau statut est 'annulé', on libère le créneau correspondant
+        if ($rdvStatut === 'annulé') {
+            $this->rdv->libererCreneauByRdv($rdv_id);
+        }
 
         header('Location: /index.php?page=gestionRdv');
         exit;
     }
 
+    public function updateStatutCreneau($statut, $id_creneau){
+
+        $this->rdv->updateStatutCreneau($statut, $id_creneau);
+
+    }
 
 }
 ?>

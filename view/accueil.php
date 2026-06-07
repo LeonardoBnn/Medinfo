@@ -17,15 +17,13 @@ if (empty($_SESSION['user'])) {
     <section class="specialites">
         <h3>Nos spécialités médicales</h3>
         <ul class="specialite-list">
-            <li><a href="index.php?page=listeMedecins&specialite=1">❤️ Cardiologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=2">🌿 Dermatologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=3">🤰 Gynécologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=4">👶 Pédiatrie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=5">🧠 Neurologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=6">🧬 Endocrinologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=13">👂 ORL</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=14">👁️ Ophtalmologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=16">👩‍⚕️ Médecine générale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=1">Médecine générale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=2">Médecine spécialisée</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=3">Dentaire</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=4">Infirmerie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=5">Imagerie médicale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=6">Laboratoire</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=7">Vaccination</a></li>
         </ul>
     </section>
 
@@ -60,15 +58,13 @@ if (empty($_SESSION['user'])) {
     <section class="specialites">
         <h3>Nos spécialités médicales</h3>
         <ul class="specialite-list">
-            <li><a href="index.php?page=listeMedecins&specialite=1">❤️ Cardiologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=2">🌿 Dermatologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=3">🤰 Gynécologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=4">👶 Pédiatrie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=5">🧠 Neurologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=6">🧬 Endocrinologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=13">👂 ORL</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=14">👁️ Ophtalmologie</a></li>
-            <li><a href="index.php?page=listeMedecins&specialite=16">👩‍⚕️ Médecine générale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=1">Médecine générale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=2">Médecine spécialisée</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=3">Dentaire</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=4">Infirmerie</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=5">Imagerie médicale</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=6">Laboratoire</a></li>
+            <li><a href="index.php?page=listeMedecins&specialite=7">Vaccination</a></li>
         </ul>
     </section>
 

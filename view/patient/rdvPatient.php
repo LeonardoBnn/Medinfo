@@ -1,6 +1,15 @@
 <?php
 require_once ROOT . 'controller/rendez_vous/readRdvPatient.php';
 
+function getStatusLabel($statut) {
+    $labels = [
+        'confirmé' => 'confirmé',
+        'a_confirmer' => 'à confirmer',
+        'annulé' => 'annulé',
+        'honoré' => 'honoré'
+    ];
+    return $labels[$statut] ?? 'Inconnu';
+}
 // Le controller prépare déjà $rdvs via showRdvPatient()
 ?>
 <!DOCTYPE html>
@@ -49,7 +58,7 @@ require_once ROOT . 'controller/rendez_vous/readRdvPatient.php';
                             </td>
                             <td data-label="Statut">
                                 <span class="constante-tag">
-                                    <?= htmlspecialchars($rdv['rdv_statut']); ?>
+                                    <?= htmlspecialchars(getStatusLabel($rdv['rdv_statut'])); ?>
                                 </span>
                             </td>
                         </tr>

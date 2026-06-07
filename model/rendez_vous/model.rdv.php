@@ -162,6 +162,15 @@ Class Rendez_vous{
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //Changer le statut du creneaux à la prise du rdv
+    public function updateStatutCreneau($statut, $id_creneau){
+        $req = $this->bdd->prepare("UPDATE creneau SET statut = :creneauStatut where id_creneau = :id_creneau");
+        $req->bindParam(':creneauStatut', $statut);
+        $req->bindParam(':id_creneau', $id_creneau);
+
+        return $req->execute();
+    }
+
     // Récupérer les informations d'un créneau spécifique pour le récapitulatif
     public function getCreneauInfos($id_creneau) {
         $req = $this->bdd->prepare("
@@ -183,6 +192,21 @@ Class Rendez_vous{
         $req->bindParam(':rdvStatut', $rdvStatut);
         $req->bindParam(':rdv_id', $rdv_id);
 
+        return $req->execute();
+    }
+
+    // Libérer le créneau associé à un rendez-vous annulé
+    public function libererCreneauByRdv($id_rdv) {
+        $req = $this->bdd->prepare("
+            UPDATE creneau 
+            SET statut = 'libre', disponibilite = 1 
+            WHERE id_creneau = (
+                SELECT fk_id_creneau 
+                FROM rendez_vous 
+                WHERE id_rdv = :id_rdv
+            )
+        ");
+        $req->bindParam(':id_rdv', $id_rdv);
         return $req->execute();
     }
 }

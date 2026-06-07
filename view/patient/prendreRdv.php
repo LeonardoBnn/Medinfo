@@ -98,6 +98,7 @@
             <input type="hidden" name="id_patient" value="<?= $_SESSION['user']['id_patient'] ?? 0; ?>">
             <input type="hidden" name="id_creneau" value="<?= htmlspecialchars($_GET['id_creneau'] ?? 0); ?>">
             <input type="hidden" name="action" value="ajouter">
+            <input type="hidden" name="statut" value="occupe">
 
             <div class="rdv-form-actions">
                 <button type="submit" class="btn-primary">Confirmer le RDV</button>
