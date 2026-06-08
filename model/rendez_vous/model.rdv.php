@@ -209,6 +209,53 @@ Class Rendez_vous{
         $req->bindParam(':id_rdv', $id_rdv);
         return $req->execute();
     }
+
+    // Récupérer les RDV du médecin uniquement pour aujourd'hui
+    public function getTodayRdvMedecin($id_utilisateur){
+           
+        $req = $this->bdd->prepare("
+            SELECT 
+            rdv.id_rdv,
+            rdv.date_creation,
+            rdv.motif,
+            rdv.statut AS rdv_statut,
+            rdv.fk_id_patient AS id_patient,
+            TIME_FORMAT(c.date_heure_debut, '%H:%i') AS heure_debut_formatee,
+            c.date_heure_fin,
+            s.libelle AS salle_libelle,
+            s.etage AS salle_etage,
+            pu.nom AS patient_nom,
+            pu.prenom AS patient_prenom,
+            pu.email as patient_email
+            
+        FROM 
+            rendez_vous rdv
+        INNER JOIN 
+            creneau c ON rdv.fk_id_creneau = c.id_creneau
+        INNER JOIN 
+            patient p ON rdv.fk_id_patient = p.id_patient
+        INNER JOIN 
+            utilisateur pu ON p.fk_id_utilisateur = pu.id_utilisateur
+        INNER JOIN 
+            medecin m ON c.fk_id_medecin = m.id_medecin
+        INNER JOIN
+            salle s ON c.fk_id_salle = s.id_salle
+        INNER JOIN 
+            utilisateur mu ON m.fk_id_utilisateur = mu.id_utilisateur 
+            
+        WHERE 
+            mu.id_utilisateur = :id_utilisateur 
+            AND DATE(c.date_heure_debut) = CURDATE() -- Filtre sur la date du jour
+            
+        ORDER BY 
+            c.date_heure_debut ASC -- Ordre croissant pour l'agenda du jour
+        ");
+        
+        $req->bindParam(':id_utilisateur', $id_utilisateur);
+        $req->execute();
+
+        return $req->fetchAll();
+    }
 }
 
 
