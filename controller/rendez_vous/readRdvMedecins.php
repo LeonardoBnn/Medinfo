@@ -5,7 +5,10 @@ require_once ROOT . 'bdd/bdd.php';
 
 $readRdvMedecins = new Rendez_vous($bdd);
 
-// CORRECTION : On utilise la nouvelle méthode et on renomme la variable en $rdvMedecins
+// 1. Pour la page "Gestion des Rendez-vous" (Historique complet)
+$rendezVousList = $readRdvMedecins->getAllRdvMedecin($_SESSION['user']['id_utilisateur']);
+
+// 2. Pour la page "Accueil Médecin" (Agenda du jour uniquement)
 $rdvMedecins = $readRdvMedecins->getTodayRdvMedecin($_SESSION['user']['id_utilisateur']);
 
 $formatter = new IntlDateFormatter(
